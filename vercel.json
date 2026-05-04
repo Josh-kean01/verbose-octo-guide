@@ -3,15 +3,13 @@
   "outputDirectory": "dist",
   "functions": {
     "api/formats.py": {
-      "runtime": "python3.12",
+      "runtime": "python3.11",
       "maxDuration": 30
     },
     "api/stream.py": {
-      "runtime": "python3.12",
+      "runtime": "python3.11",
       "maxDuration": 300
     }
   },
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
