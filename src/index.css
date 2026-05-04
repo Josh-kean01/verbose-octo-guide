@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #0d0f14;
+    --bg-secondary: #13161d;
+    --bg-card: #181c25;
+    --bg-card-hover: #1e2230;
+    --border: #23283a;
+    --border-hover: #2e3450;
+    --text-primary: #f0f2f8;
+    --text-secondary: #8b92a9;
+    --text-muted: #4f566b;
+    --accent-red: #e63946;
+    --accent-purple: #9b5de5;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .animate-slideUp {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+
+  .hero-bg {
+    background-image: url('/images/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .card-dark {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
+  }
+
+  .card-dark:hover {
+    border-color: var(--border-hover);
+    background-color: var(--bg-card-hover);
+  }
+
+  .glass-dark {
+    background: rgba(24, 28, 37, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(35, 40, 58, 0.8);
+  }
+
+  .text-gradient-red {
+    background: linear-gradient(135deg, #e63946, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .scrollbar-dark::-webkit-scrollbar {
+    width: 5px;
+  }
+  .scrollbar-dark::-webkit-scrollbar-track {
+    background: #13161d;
+  }
+  .scrollbar-dark::-webkit-scrollbar-thumb {
+    background: #23283a;
+    border-radius: 10px;
+  }
+}
